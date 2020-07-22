@@ -1,0 +1,51 @@
+{
+  "name": "aws-node-ts-sls-base",
+  "version": "1.0.0",
+  "description": "Aws nodejs typescript serverless base template",
+  "main": "handler.js",
+  "scripts": {
+    "test": "NODE_ENV=test ./node_modules/.bin/jest --ci --verbose",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "buildtest": "tsc --noEmit",
+    "predeploy": "yarn run test && yarn run lint",
+    "deploy": "sls deploy",
+    "deploy:prod": "sls deploy --stage prod"
+  },
+  "dependencies": {
+    "aws-lambda": "^1.0.6",
+    "source-map-support": "^0.5.10"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
+    "@types/aws-lambda": "^8.10.17",
+    "@types/jest": "^26.0.4",
+    "@types/node": "^10.12.18",
+    "@typescript-eslint/eslint-plugin": "^3.6.0",
+    "@typescript-eslint/parser": "^3.6.0",
+    "aws-sdk-mock": "^5.1.0",
+    "babel-jest": "^26.1.0",
+    "eslint": "^7.4.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^23.8.0",
+    "eslint-plugin-module-resolver": "^0.17.0",
+    "fork-ts-checker-webpack-plugin": "^3.1.1",
+    "jest": "^26.1.0",
+    "serverless-prune-plugin": "^1.4.3",
+    "serverless-pseudo-parameters": "^2.5.0",
+    "serverless-webpack": "^5.2.0",
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.2.4",
+    "typescript-eslint": "^0.0.1-alpha.0",
+    "webpack": "^4.29.0",
+    "webpack-node-externals": "^2.5.0"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "author": "mouthzipper",
+  "license": "MIT"
+}
